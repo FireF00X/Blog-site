@@ -14,7 +14,7 @@ const MainNotFoundPage = () => {
                 <p>This Page is Not Found</p>
                 <Button variant='outline-secondary'
                 size='lg'
-                onclick={() => navigate('/')}>
+                onclick={() => navigate('/Blog-site/')}>
                     Go Home
                 </Button>
             </Container>

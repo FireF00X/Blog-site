@@ -15,18 +15,18 @@ const RoutesIndex = () => {
     return (
         <>
             <Routes>
-                <Route path={'/'} element={<DefaultLayout />}>
+                <Route path={'/Blog-site/'} element={<DefaultLayout />}>
                     <Route index element={<Home />} />
                     <Route path={'*'} element={<NotFound />} />
                 </Route>
 
-                <Route path={'/blog'} element={<DefaultLayout />}>
+                <Route path={'/Blog-site/blog'} element={<DefaultLayout />}>
                     <Route index element={<Blogs />} />
                     <Route path={'addnew'} element={<AddNew />} />
                     <Route path={':slug'} element={<Article />} />
                 </Route>
 
-                <Route path={'/'} element={<AuthLayout />}>
+                <Route path={'/Blog-site/'} element={<AuthLayout />}>
                     <Route path='login' element={<Login />} />
                     <Route path={'signup'} element={<SignUp />} />
                 </Route>
