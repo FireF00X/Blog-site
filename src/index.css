@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+main {
+  position: relative;
+  min-height: calc(100vh - 124px);
+}
+
+.ql-size-huge {
+  font-size: 2em !important;
+  font-weight: bold !important;
+}
+
+.ql-size-large {
+  font-weight: bold !important;
+  font-size: 1.6em !important;
+}
+
+.ql-size-small {
+  font-size: 1.2em !important;
+}

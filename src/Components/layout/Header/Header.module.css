@@ -1,0 +1,17 @@
+.header .logo-img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.header span a {
+    color: #dedede;
+    text-decoration: none;
+}
+
+.header span a:hover {
+    color: #fff;
+}
+
+.header span a:global(.active) {
+    color: #fff;
+}
