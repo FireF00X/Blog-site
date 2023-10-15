@@ -42,7 +42,7 @@ const MainAddNewPage = () => {
             setValue('');
             setLoading(false);
             getData();
-            navigate('/blog/' + slug)
+            navigate('/Blog-site/blog/' + slug)
         } catch (error) {
             console.log(error);
         }

@@ -52,7 +52,7 @@ const LatestArticles = () => {
               <Button
                 variant={'primary'}
                 className='my-5 mx-auto'
-                onClick={() => { navigate('/blog') }}>
+                onClick={() => { navigate('/Blog-site/blog') }}>
                 See All
               </Button>
             </Row>

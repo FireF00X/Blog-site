@@ -48,7 +48,7 @@ const MainArticlesPage = () => {
                 try {
                     deleteDoc(documentRef);
                     getAllPosts();
-                    navigate('/blog');
+                    navigate('/Blog-site/blog');
                 } catch (error) {
                     console.error('Error deleting document: ', error);
                 }
@@ -87,7 +87,7 @@ const MainArticlesPage = () => {
                     </div>
                     <Container>
                         <div className={styles['delete-button']} onClick={handleDelete}>
-                        <FontAwesomeIcon icon={faTrashCan} />
+                            <FontAwesomeIcon icon={faTrashCan} />
                         </div>
                         <Row className='w-100 mb-4'>
                             <Card style={{ width: '100%' }}>

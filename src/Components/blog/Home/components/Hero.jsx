@@ -17,7 +17,7 @@ const Hero = () => {
                         </div>
                         <p className='mt-3 text-center'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem similique beatae earum natus tenetur quisquam itaque accusantium, voluptas iusto, deserunt, ad vel repellendus reiciendis incidunt?</p>
                         <Button variant='primary'
-                            className='' onClick={_ => navigate('/blog/addnew')}>
+                            className='' onClick={_ => navigate('/Blog-site/blog/addnew')}>
                             Add New Article
                         </Button>
                     </Col>
