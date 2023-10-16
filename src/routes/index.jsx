@@ -1,5 +1,5 @@
-import React from 'react'
-import { Route, Routes } from 'react-router';
+import React, { useContext } from 'react'
+import { Navigate, Route, Routes } from 'react-router';
 import DefaultLayout from '../layouts/DefaultLayout';
 import AuthLayout from '../layouts/AuthLayout';
 import Home from '../pages/Home';
@@ -9,9 +9,11 @@ import NotFound from '../pages/NotFound';
 import AddNew from '../pages/blogs/AddNew';
 import Article from '../pages/blogs/Artecle';
 import Blogs from '../pages/blogs/Blogs';
+import { AuthContext } from '../Contexts/AuthContext';
 
 
 const RoutesIndex = () => {
+    const { isAuth } = useContext(AuthContext);
     return (
         <>
             <Routes>
@@ -22,13 +24,27 @@ const RoutesIndex = () => {
 
                 <Route path={'/Blog-site/blog'} element={<DefaultLayout />}>
                     <Route index element={<Blogs />} />
+                    {isAuth?(
                     <Route path={'addnew'} element={<AddNew />} />
+                    ):(
+                    <Route path={'addnew'} element={<Navigate to={'/Blog-site/login'} />} />
+
+                    )}
                     <Route path={':slug'} element={<Article />} />
                 </Route>
 
                 <Route path={'/Blog-site/'} element={<AuthLayout />}>
-                    <Route path='login' element={<Login />} />
-                    <Route path={'signup'} element={<SignUp />} />
+                    {!isAuth ? (
+                        <>
+                            <Route path='login' element={<Login />} />
+                            <Route path={'signup'} element={<SignUp />} />
+                        </>
+                    ) : (
+                        <>
+                            <Route path='login' element={<Navigate to={'/Blog-site/'} />} />
+                            <Route path={'signup'} element={<Navigate to={'/Blog-site/'} />} />
+                        </>
+                    )}
                 </Route>
             </Routes>
 

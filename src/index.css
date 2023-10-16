@@ -17,6 +17,16 @@ main {
   min-height: calc(100vh - 124px);
 }
 
+main.auth-class {
+  background: #95a5a6;
+  background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/dark_embroidery.png);
+  font-family: "Helvetica Neue", Arial, Sans-Serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .ql-size-huge {
   font-size: 2em !important;
   font-weight: bold !important;

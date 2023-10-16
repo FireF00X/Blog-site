@@ -1,4 +1,10 @@
-.hero-image img{
+.hero-image img {
     width: 8rem;
     height: 8rem;
+}
+
+.ahmed.disabled {
+    opacity: .75;
+    pointer-events: all !important;
+    cursor: no-drop !important;
 }

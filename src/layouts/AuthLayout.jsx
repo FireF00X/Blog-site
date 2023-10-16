@@ -4,8 +4,7 @@ import { Outlet } from 'react-router'
 const AuthLayout = () => {
     return (
         <>
-        Authlayout
-        <main>
+        <main className='auth-class'>
             <Outlet />
         </main>
         </>

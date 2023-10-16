@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { AuthContext } from '../../../Contexts/AuthContext'
 
 const MySwal = withReactContent(Swal)
 
@@ -27,9 +28,8 @@ const MainArticlesPage = () => {
     const param = useParams();
     const { getData, loading, error, data } = useFetchPostParam('Posts', param.slug);
     const { getData: getAllPosts } = useContext(PostsContext)
-
     const { db } = useContext(FirebaseContext);
-
+    const { isAuth } = useContext(AuthContext)
     const isMount = useRef(false);
     const navigate = useNavigate();
 
@@ -75,7 +75,7 @@ const MainArticlesPage = () => {
             {error && (
                 <Alert
                     className={`text-center d-block my-auto`}
-                    variant='danger' // Use single quotes here
+                    variant='danger'
                 >
                     {error}
                 </Alert>
@@ -86,9 +86,9 @@ const MainArticlesPage = () => {
                         <img src={data.imgUrl} alt='article_image' /> {/* Fix the alt attribute */}
                     </div>
                     <Container>
-                        <div className={styles['delete-button']} onClick={handleDelete}>
+                        {isAuth && <div className={styles['delete-button']} onClick={handleDelete}>
                             <FontAwesomeIcon icon={faTrashCan} />
-                        </div>
+                        </div>}
                         <Row className='w-100 mb-4'>
                             <Card style={{ width: '100%' }}>
                                 <Card.Body>
